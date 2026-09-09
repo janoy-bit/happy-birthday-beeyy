@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy 17th, Beeyy! 🏁🐱</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+
+<style>
+/* ===== EXTRA BIRTHDAY ELEMENTS ===== */
+.extra-wrap{max-width:980px;margin:auto}
+.secret-card,.gift-card,.final-card{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.15);border-radius:28px;padding:34px;text-align:center;box-shadow:0 20px 60px rgba(0,0,0,.18)}
+.secret-letter{display:none;margin-top:22px;text-align:left;line-height:1.8;background:rgba(255,255,255,.06);padding:25px;border-radius:20px;animation:fadeIn .7s ease}
+.secret-letter.show{display:block}
+@keyframes fadeIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+.gift-box{font-size:6rem;cursor:pointer;display:inline-block;transition:.35s;user-select:none}
+.gift-box:hover{transform:translateY(-8px) rotate(-3deg) scale(1.05)}
+.gift-message{display:none;margin-top:18px;font-size:1.05rem;line-height:1.7}
+.gift-message.show{display:block;animation:fadeIn .6s ease}
+.cat-car-stage{position:relative;overflow:hidden;height:180px;margin-top:25px;border-radius:24px;background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.02))}
+.extra-cat{position:absolute;bottom:38px;left:8%;font-size:3rem;animation:catWalk 7s linear infinite}
+.extra-car{position:absolute;bottom:24px;left:-12%;font-size:3rem;animation:carDrive 5s linear infinite}
+@keyframes catWalk{0%,100%{transform:translateX(0)}50%{transform:translateX(430px)}}
+@keyframes carDrive{0%{left:-12%}100%{left:110%}}
+.countdown{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin:25px 0}
+.time-box{min-width:78px;padding:15px 10px;border-radius:18px;background:rgba(255,255,255,.08)}
+.time-box strong{display:block;font-size:1.8rem}
+.time-box span{font-size:.72rem;opacity:.75}
+.message-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px;margin-top:25px}
+.message-chip{padding:18px;border-radius:18px;background:rgba(255,255,255,.06);cursor:pointer;transition:.25s}
+.message-chip:hover{transform:translateY(-4px)}
+.message-reveal{margin-top:20px;min-height:30px;font-style:italic}
+@media(max-width:600px){
+  .secret-card,.gift-card,.final-card{padding:24px 18px}
+  .cat-car-stage{height:150px}
+  @keyframes catWalk{0%,100%{transform:translateX(0)}50%{transform:translateX(180px)}}
+}
+</style>
+
+
+
+
+</head>
+<body>
+  <div id="confetti"></div>
+
+  <button class="music-btn" id="musicBtn" title="Putar musik">♪</button>
+  <!-- Musik: file MP4 berada di folder utama repository. -->
+  <video id="music" loop playsinline preload="auto" style="display:none;">
+    <source src="lv_0_20260908130702.mp4" type="video/mp4">
+  </video>
+
+  <header class="hero">
+    <div class="road-lines"></div>
+    <div class="cat cat1">🐱</div>
+    <div class="cat cat2">🐾</div>
+    <div class="race-car">🏎️💨</div>
+
+    <div class="hero-content">
+      <p class="eyebrow">10 SEPTEMBER 2026 · SWEET SEVENTEEN</p>
+      <h1>Happy Birthday,<br><span>Beeyy.</span></h1>
+      <p class="subtitle">A little website made with a lot of love ♡</p>
+      <button class="primary" onclick="document.getElementById('letter').scrollIntoView({behavior:'smooth'})">
+        Open your surprise ↓
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section class="section letter" id="letter">
+      <div class="section-tag">01 · FOR YOU 💌</div>
+      <div class="letter-card">
+        <div class="stamp">17<br><small>YEARS</small></div>
+        <h2>To my Beeyy,</h2>
+        <p>
+          Hari ini seseorang yang spesial buat aku bertambah satu tahun lagi.
+          Selamat ulang tahun yang ke-17, Beeyy! ♡
+        </p>
+        <p>
+          Semoga di umur baru ini kamu ketemu banyak hal baik, banyak alasan
+          buat tersenyum, dan semua hal yang kamu usahakan pelan-pelan
+          menemukan jalannya.
+        </p>
+        <p>
+          Thank you for being part of my days and for all the little memories
+          we've made together. I hope we get to make many more.
+        </p>
+        <p class="signature">— from someone who loves you ♡</p>
+      </div>
+    </section>
+
+    <section class="section memories">
+      <div class="section-tag">02 · OUR MEMORIES 📸</div>
+      <h2>Little moments,<br><em>big memories.</em></h2>
+      <p class="intro">Beberapa foto yang selalu punya cerita sendiri.</p>
+
+      <div class="gallery">
+        <figure class="photo-card tilt-left">
+          <img src="images/foto3.jpg" alt="Foto berdua">
+          <figcaption>one of my favorite memories ♡</figcaption>
+        </figure>
+        <figure class="photo-card tilt-right">
+          <img src="images/foto4.jpg" alt="Foto berdua">
+          <figcaption>just us, being us.</figcaption>
+        </figure>
+        <figure class="photo-card tilt-left">
+          <img src="images/foto5.jpg" alt="Foto berdua">
+          <figcaption>the silly little moments 🐾</figcaption>
+        </figure>
+        <figure class="photo-card tilt-right">
+          <img src="images/foto6.jpg" alt="Foto bersama">
+          <figcaption>another page in our story.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section profile">
+      <div class="cat-big">🐱</div>
+      <div class="profile-grid">
+        <div>
+          <div class="section-tag">03 · THE BIRTHDAY BOY 🏁</div>
+          <h2>Meet the<br><em>17-year-old</em></h2>
+          <p>
+            Fahri Ramdhan — the birthday boy behind the nickname
+            <strong>“Beeyy”</strong>.
+          </p>
+          <div class="specs">
+            <span><b>NAME</b> Fahri Ramdhan</span>
+            <span><b>NICKNAME</b> Beeyy</span>
+            <span><b>BIRTHDAY</b> 10 September 2009</span>
+            <span><b>AGE</b> 17 🎂</span>
+          </div>
+        </div>
+        <div class="portrait-frame">
+          <img src="images/foto1.jpg" alt="Foto Fahri">
+        </div>
+      </div>
+    </section>
+
+    <section class="section seventeen">
+      <div class="section-tag">04 · LEVEL 17 UNLOCKED 🏎️</div>
+      <h2>17 little reasons<br><em>to celebrate you.</em></h2>
+      <p class="intro">Klik kartunya satu-satu ♡</p>
+      <div class="reason-grid" id="reasons"></div>
+    </section>
+
+    <section class="section race">
+      <div class="track">
+        <div class="race-label">OUR LITTLE RACE</div>
+        <div class="finish">FINISH<br>♡</div>
+        <div class="checkpoint cp1">01<br><small>meet</small></div>
+        <div class="checkpoint cp2">02<br><small>laugh</small></div>
+        <div class="checkpoint cp3">03<br><small>memories</small></div>
+        <div class="checkpoint cp4">04<br><small>still here</small></div>
+        <div class="track-car">🏎️</div>
+      </div>
+      <p class="race-text">No matter how fast life goes, I hope we always make time for the little moments. ♡</p>
+    </section>
+
+    <section class="section childhood">
+      <div class="section-tag">05 · FROM THEN TO NOW 🐾</div>
+      <div class="child-grid">
+        <img src="images/foto2.jpg" alt="Foto Fahri saat kecil">
+        <div>
+          <h2>Look how far<br><em>you've come.</em></h2>
+          <p>
+            Dari versi kecil kamu sampai jadi kamu yang sekarang.
+            Happy 17th, Beeyy. Semoga perjalanan setelah ini dipenuhi
+            hal-hal yang bikin kamu bangga sama diri sendiri.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section cake">
+      <div class="cat">🐱</div>
+      <div class="section-tag">06 · MAKE A WISH 🎂</div>
+      <h2>Ready to make<br><em>a wish?</em></h2>
+      <div class="cake-emoji">🎂</div>
+      <button class="primary" id="wishBtn">Make a wish, Beeyy ✨</button>
+      <p id="wishText" class="wish-text"></p>
+    </section>
+
+    <section class="ending">
+      <div class="end-photo">
+        <img src="images/foto7.jpg" alt="Foto kenangan">
+      </div>
+      <div class="ending-copy">
+        <p class="eyebrow">10 · 09 · 2026</p>
+        <h2>Happy Sweet<br><span>Seventeen, Beeyy.</span></h2>
+        <p>
+          I hope 17 treats you kindly.<br>
+          Keep smiling, keep dreaming,<br>
+          and keep being you. ♡
+        </p>
+        <div class="tiny-racing">🏁 🐱 🏎️</div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="extra-wrap">
+        <div class="section-tag">07 · A SECRET FOR YOU 💌</div>
+        <div class="secret-card">
+          <h2>There's a little<br><em>secret letter.</em></h2>
+          <p class="intro">Cuma bisa dibuka kalau kamu berani tekan tombolnya 👀</p>
+          <button class="primary" id="secretBtn">Open secret letter 💌</button>
+          <div class="secret-letter" id="secretLetter">
+            <p>Hai Beeyy ♡</p>
+            <p>
+              Kalau kamu sampai baca ini, berarti kamu sudah menemukan salah satu
+              bagian rahasia dari hadiah kecil ini. Aku cuma mau bilang:
+              terima kasih sudah hadir dan jadi bagian dari banyak cerita yang
+              aku simpan baik-baik.
+            </p>
+            <p>
+              Di umur 17 ini, semoga kamu selalu punya alasan untuk bahagia,
+              berani mengejar hal yang kamu mau, dan tetap jadi diri kamu sendiri.
+              Semoga hari ini jadi salah satu kenangan manis yang kamu ingat.
+            </p>
+            <p>Happy birthday, Beeyy. ♡</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="extra-wrap">
+        <div class="section-tag">08 · ONE LITTLE GIFT 🎁</div>
+        <div class="gift-card">
+          <h2>There's something<br><em>inside the box.</em></h2>
+          <p class="intro">Klik kotaknya untuk membuka hadiah 🎀</p>
+          <div class="gift-box" id="giftBox" role="button" tabindex="0">🎁</div>
+          <div class="gift-message" id="giftMessage">
+            <strong>Surpriseee! 🎉</strong><br>
+            Hadiahnya mungkin kecil, tapi harapannya besar:
+            semoga tahun ke-17 kamu dipenuhi cerita yang indah,
+            orang-orang baik, dan banyak momen yang bikin kamu tersenyum. ♡
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="extra-wrap">
+        <div class="section-tag">09 · CAT & RACING MODE 🐱🏎️</div>
+        <div class="secret-card">
+          <h2>Beeyy's little<br><em>race track.</em></h2>
+          <p class="intro">Kucingnya jalan, mobilnya ngebut. 🐱💨</p>
+          <div class="cat-car-stage">
+            <div class="extra-cat">🐱</div>
+            <div class="extra-car">🏎️💨</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="extra-wrap">
+        <div class="section-tag">10 · COUNTDOWN TO 17 🎂</div>
+        <div class="secret-card">
+          <h2>Counting down to<br><em>your special day.</em></h2>
+          <div class="countdown" id="countdown">
+            <div class="time-box"><strong id="cdDays">0</strong><span>DAYS</span></div>
+            <div class="time-box"><strong id="cdHours">0</strong><span>HOURS</span></div>
+            <div class="time-box"><strong id="cdMinutes">0</strong><span>MINUTES</span></div>
+            <div class="time-box"><strong id="cdSeconds">0</strong><span>SECONDS</span></div>
+          </div>
+          <p id="countdownText" class="intro">Menuju 10 September 2026 ♡</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="extra-wrap">
+        <div class="section-tag">11 · LITTLE MESSAGES 💬</div>
+        <div class="secret-card">
+          <h2>Tap a message<br><em>for you.</em></h2>
+          <div class="message-list">
+            <div class="message-chip" data-message="Semoga hari ini bikin kamu senyum lebih banyak. ♡">🌷 For today</div>
+            <div class="message-chip" data-message="Semoga semua usaha kamu pelan-pelan menemukan jalannya. ✨">⭐ For your dreams</div>
+            <div class="message-chip" data-message="Jangan lupa istirahat dan menikmati hal-hal kecil yang bikin bahagia. 🐱">🐱 For your days</div>
+            <div class="message-chip" data-message="Semoga umur 17 membawa banyak cerita yang layak dikenang. 🏁">🏁 For 17</div>
+          </div>
+          <div class="message-reveal" id="messageReveal"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="extra-wrap">
+        <div class="section-tag">12 · ONE LAST MESSAGE ♡</div>
+        <div class="final-card">
+          <h2>Before you go...<br><em>one last thing.</em></h2>
+          <p class="intro">
+            Kalau semua bagian website ini sudah kamu buka, tekan tombol terakhir.
+          </p>
+          <button class="primary" id="finalBtn">Open the final message ✨</button>
+          <div class="secret-letter" id="finalMessage">
+            <p><strong>Happy Sweet Seventeen, Beeyy. ♡</strong></p>
+            <p>
+              Semoga langkah kamu setelah ini selalu dipertemukan dengan hal-hal
+              baik. Terus kejar mimpi kamu, nikmati prosesnya, dan jangan berhenti
+              percaya sama diri sendiri.
+            </p>
+            <p>
+              Terima kasih sudah menjadi bagian dari cerita yang berarti.
+              Semoga halaman-halaman berikutnya jauh lebih indah. 🏁🐱🏎️
+            </p>
+            <p><strong>Happy 17th birthday. ♡</strong></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>made with ♡ for Fahri Ramdhan · 17</footer>
+
+  <script>
+// Website interactions + music player (self-contained; no external script needed)
+const reasons = [
+  ["01","cara kamu bikin aku nyaman"],["02","senyum kecil kamu"],["03","kamu yang selalu punya cerita"],
+  ["04","sisi random kamu"],["05","momen-momen sederhana kita"],["06","cara kamu jadi diri sendiri"],
+  ["07","kamu yang selalu punya tempat di pikiranku"],["08","tawa yang pernah kita bagi"],["09","semua kenangan kecil"],
+  ["10","cara kamu membuat hari terasa berbeda"],["11","kamu yang tetap jadi kamu"],["12","hal-hal kecil yang cuma kita mengerti"],
+  ["13","cerita yang belum selesai"],["14","waktu yang pernah kita lewati"],["15","semua versi kamu"],["16","karena kamu adalah kamu"],
+  ["17","and simply… because it's you. ♡"]
+];
+const grid=document.getElementById('reasons');
+if(grid){ reasons.forEach(([num,text])=>{ const card=document.createElement('div'); card.className='reason'; card.innerHTML=`<span class="num">${num}</span><span class="label">tap me ♡</span><span class="hidden-text">${text}</span>`; card.onclick=()=>card.classList.toggle('open'); grid.appendChild(card); }); }
+
+const wishBtn=document.getElementById('wishBtn');
+if(wishBtn){ wishBtn.addEventListener('click',()=>{ const wt=document.getElementById('wishText'); if(wt) wt.textContent='Semoga semua doa baik kamu menemukan jalannya. ♡'; const conf=document.getElementById('confetti'); if(conf){ for(let i=0;i<45;i++){ const c=document.createElement('span'); c.className='conf'; c.textContent=['♡','✦','🐱','🏁','🎉'][Math.floor(Math.random()*5)]; c.style.left=Math.random()*100+'vw'; c.style.animationDelay=Math.random()*1.2+'s'; conf.appendChild(c); setTimeout(()=>c.remove(),4000); } } }); }
+
+const music=document.getElementById('music');
+const musicBtn=document.getElementById('musicBtn');
+if(music && musicBtn){
+  musicBtn.addEventListener('click', async ()=>{
+    try{
+      if(music.paused){ await music.play(); musicBtn.classList.add('playing'); musicBtn.textContent='♫'; }
+      else { music.pause(); musicBtn.classList.remove('playing'); musicBtn.textContent='♪'; }
+    }catch(err){
+      console.log('Musik gagal diputar:',err);
+      // No misleading alert about lagu.mp3: the site uses the MP4 file in the repo.
+    }
+  });
+  music.addEventListener('ended',()=>{ musicBtn.classList.remove('playing'); musicBtn.textContent='♪'; });
+}
+
+// Extra interactive elements
+const secretBtn=document.getElementById('secretBtn');
+const secretLetter=document.getElementById('secretLetter');
+if(secretBtn && secretLetter){
+  secretBtn.addEventListener('click',()=>{
+    secretLetter.classList.toggle('show');
+    secretBtn.textContent=secretLetter.classList.contains('show') ? 'Close secret letter 💌' : 'Open secret letter 💌';
+  });
+}
+
+const giftBox=document.getElementById('giftBox');
+const giftMessage=document.getElementById('giftMessage');
+if(giftBox && giftMessage){
+  const openGift=()=>{
+    giftMessage.classList.toggle('show');
+    giftBox.classList.toggle('opened');
+  };
+  giftBox.addEventListener('click',openGift);
+  giftBox.addEventListener('keydown',e=>{ if(e.key==='Enter' || e.key===' '){ e.preventDefault(); openGift(); } });
+}
+
+const messageReveal=document.getElementById('messageReveal');
+document.querySelectorAll('.message-chip').forEach(chip=>{
+  chip.addEventListener('click',()=>{
+    if(messageReveal) messageReveal.textContent=chip.dataset.message || '';
+  });
+});
+
+const finalBtn=document.getElementById('finalBtn');
+const finalMessage=document.getElementById('finalMessage');
+if(finalBtn && finalMessage){
+  finalBtn.addEventListener('click',()=>{
+    finalMessage.classList.toggle('show');
+    finalBtn.textContent=finalMessage.classList.contains('show') ? 'Close final message ♡' : 'Open the final message ✨';
+    if(finalMessage.classList.contains('show')) finalMessage.scrollIntoView({behavior:'smooth',block:'center'});
+  });
+}
+
+// Countdown to 10 September 2026, local Jakarta time.
+const countdownTarget=new Date('2026-09-10T00:00:00+07:00').getTime();
+function updateCountdown(){
+  const now=Date.now();
+  let diff=Math.max(0,countdownTarget-now);
+  const days=Math.floor(diff/86400000); diff%=86400000;
+  const hours=Math.floor(diff/3600000); diff%=3600000;
+  const minutes=Math.floor(diff/60000); diff%=60000;
+  const seconds=Math.floor(diff/1000);
+  const d=document.getElementById('cdDays'), h=document.getElementById('cdHours'), m=document.getElementById('cdMinutes'), sec=document.getElementById('cdSeconds');
+  if(d)d.textContent=days;
+  if(h)h.textContent=hours;
+  if(m)m.textContent=minutes;
+  if(sec)sec.textContent=seconds;
+  const txt=document.getElementById('countdownText');
+  if(txt) txt.textContent = countdownTarget-now>0 ? 'Menuju 10 September 2026 ♡' : 'Hari spesialnya sudah tiba! Happy 17th! 🎂♡';
+}
+updateCountdown();
+setInterval(updateCountdown,1000);
+</script>
+</body>
+</html>
